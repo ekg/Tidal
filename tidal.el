@@ -378,7 +378,8 @@ Two functions will be created, `tidal-run-NAME' and `tidal-stop-NAME'"
   (set (make-local-variable 'paragraph-separate) "[ \t\f]*$")
   (setq tidal-literate-p t)
   (setq haskell-literate 'bird)
-  (turn-on-font-lock))
+  (turn-on-font-lock)
+  (auto-revert-mode 1))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.ltidal\\'" . literate-tidal-mode))
@@ -392,7 +393,8 @@ Two functions will be created, `tidal-run-NAME' and `tidal-stop-NAME'"
   (set (make-local-variable 'paragraph-start) "\f\\|[ \t]*$")
   (set (make-local-variable 'paragraph-separate) "[ \t\f]*$")
   (setq tidal-literate-p nil)
-  (turn-on-font-lock))
+  (turn-on-font-lock)
+  (auto-revert-mode 1))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.tidal\\'" . tidal-mode))
