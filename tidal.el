@@ -184,7 +184,6 @@
                  (tidal-unlit s)
                s)))
     (tidal-send-string s*))
-  (pulse-momentary-highlight-one-line (point))
   (forward-line))
 
 (defun tidal-eval-multiple-lines ()
@@ -199,8 +198,7 @@
     (tidal-send-string ":{")
     (tidal-send-string s*)
     (tidal-send-string ":}")
-    (mark-paragraph)
-    (pulse-momentary-highlight-region (mark) (point))))
+    (mark-paragraph))))
 
 (defun tidal-run-multiple-lines ()
   "Send the current region to the interpreter as a single line."
